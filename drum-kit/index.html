@@ -57,23 +57,26 @@
   <audio data-key="76" src="sounds/Snare17.WAV"></audio>
 
   <script>
-    function removeTransition(e) {
-      if (e.propertyName !== 'transform') return;
-      e.target.classList.remove('playing');
-    }
-
+    // all just vanilla JS, no jQuery here.
     function playSound(e) {
       const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
       const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-      if (!audio) return;
+      if (!audio) return; // this here stops the function from running in case a different button is pressed.
       key.classList.add('playing');
-      audio.currentTime = 0;
+      audio.currentTime = 0; // this rewinds to the start, so one can hit the key in quick succession.
       audio.play();
     }
-    const keys = Array.from(document.querySelectorAll('.key'));
+
+    function removeTransition(e) {
+      if (e.propertyName !== 'transform') return; // skip if not transforming.
+      e.target.classList.remove('playing');
+    }
+
+    const keys = Array.from(document.querySelectorAll('.key')); // these are the visual embelishments, when pressing all keys.
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));
     window.addEventListener('keydown', playSound);
   </script>
 
 </body>
+<!-- bucket, sifter, handle, shovel, strainer, rake, board, lid, can -->
 </html>
