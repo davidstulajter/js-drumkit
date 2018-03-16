@@ -45,8 +45,8 @@ kbd {
 }
 
 .sound {
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-transform: lowercase;
   letter-spacing: .2rem;
   color: green;
 }
