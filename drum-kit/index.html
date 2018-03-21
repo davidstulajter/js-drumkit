@@ -54,7 +54,7 @@
   <audio data-key="72" src="sounds/Snare11.WAV"></audio>
   <audio data-key="74" src="sounds/Snare13.WAV"></audio>
   <audio data-key="75" src="sounds/Snare15.WAV"></audio>
-  <audio data-key="76" src="sounds/Snare17.WAV"></audio>
+  <audio data-key="76" src="sounds/Snare18.WAV"></audio>
 
   <script>
     // all just vanilla JS, no jQuery here.
@@ -75,6 +75,7 @@
     const keys = Array.from(document.querySelectorAll('.key')); // these are the visual embelishments, when pressing all keys.
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));
     window.addEventListener('keydown', playSound);
+
   </script>
 
 </body>
